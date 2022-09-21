@@ -39,14 +39,14 @@ class PrivacyWidget extends StatelessWidget {
       data: content,
       padding: const EdgeInsets.symmetric(horizontal: 10),
       styleConfig: StyleConfig(pConfig: PConfig(onLinkTap: (url) {
-        Uri _url = Uri.parse(url ?? "");
-        _launchUrl(_url);
+        // Uri _url = Uri.parse(url ?? "");
+        _launchUrl(url ?? "");
       })),
     );
   }
 
-  Future<void> _launchUrl(url) async {
-    if (!await launchUrl(url)) {
+  Future<void> _launchUrl(String url) async {
+    if (!await launch(url)) {
       throw 'Could not launch $url';
     }
   }
