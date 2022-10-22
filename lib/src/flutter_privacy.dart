@@ -66,11 +66,11 @@ class _FlutterPrivacyState extends State<FlutterPrivacy> {
                           Expanded(
                               child: GestureDetector(
                             onTap: () {
+                              Navigator.of(context).pop();
                               // 设置记录
                               if (widget.agreenHandler != null) {
                                 widget.agreenHandler!();
                               }
-                              Navigator.of(context).pop();
                             },
                             child: Container(
                               color: Theme.of(context).primaryColor,
